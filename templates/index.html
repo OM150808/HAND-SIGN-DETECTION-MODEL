@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hand Gesture Recognition</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <!-- Mediapipe JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Top Left: Project Info -->
+        <div class="corner-label top-left">
+            <span>Project: <span class="tech-value">HAND_AI.OS</span></span>
+            <span>Version: <span class="tech-value">2.4.0_STABLE</span></span>
+            <span>Auth: <span class="tech-value">FLEX</span></span>
+        </div>
+
+        <!-- Top Right: Live Data -->
+        <div class="corner-label top-right">
+            <span>System Clock: <span id="clock" class="tech-value">--:--:--</span></span>
+            <span>Uptime: <span class="tech-value">99.8%</span></span>
+            <div style="margin-top: 0.5rem;">
+                <button id="theme-toggle" class="tech-link">// TOGGLE_THEME</button>
+            </div>
+        </div>
+
+        <!-- Center: Interaction Zone -->
+        <div class="center-ui">
+            <div class="video-frame">
+                <div class="video-container">
+                    <video id="video" autoplay playsinline></video>
+                    <canvas id="output-canvas"></canvas>
+                </div>
+            </div>
+
+            <div class="prediction-card">
+                <div class="prediction-label">PREDICTION_NODE_ALPHA</div>
+                <div id="predicted-letter">--</div>
+                <div class="status-module">
+                    <div id="status-dot" class="status-dot"></div>
+                    <span id="status-text">INITIATING...</span>
+                </div>
+                <!-- Controls -->
+                <div style="margin-top: 2rem;">
+                    <button id="start-btn" class="init-button">START_CAMERA</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Left: Schematic -->
+        <div class="corner-label bottom-left">
+            <span>// DEEP_NEURAL_SENSING_ACTIVE</span>
+            <span>// MEDIAPIPE_PIPELINE_STABLE</span>
+            <div class="illustration-schematic">
+                <svg width="60" height="60" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="50" cy="50" r="40" stroke="white" stroke-width="0.5" stroke-dasharray="2 2" opacity="0.5"/>
+                    <path d="M30 50L50 30L70 50L50 70Z" stroke="white" stroke-width="1"/>
+                </svg>
+            </div>
+        </div>
+
+        <!-- Bottom Right: Metadata -->
+        <div class="corner-label bottom-right">
+            <span>Lat: <span class="tech-value">18.807° N</span></span>
+            <span>Lon: <span class="tech-value">84.141° E</span></span>
+            <span>© 2026 <span class="tech-value">FLEX_GEN_DESIGN</span></span>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
