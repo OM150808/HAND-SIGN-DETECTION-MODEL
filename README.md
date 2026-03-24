@@ -12,7 +12,7 @@ A high-performance, real-time hand gesture recognition platform designed with a 
 *   **Frontend**: HTML5, Vanilla CSS (Dynamic Variables), JavaScript (ES6+).
 *   **ML Engine**: Mediapipe Hands (Client-side).
 *   **Backend**: Python, Flask.
-*   **Libraries**: OpenCV, Scikit-Learn, NumPy.
+*   **Libraries**: Flask, Scikit-Learn, NumPy.
 
 ### 📁 Project Structure
 - `app.py`: Flask web application and inference API.
@@ -43,14 +43,13 @@ Visit `http://127.0.0.1:5000` in your browser.
 
 ### ☁️ Deployment
 
-#### Deploying to Vercel
-This project is configured for one-click deployment to Vercel:
+This project is highly optimized for Vercel deployment:
 1.  **Install Vercel CLI**: `npm i -g vercel`
 2.  **Login**: `vercel login`
 3.  **Deploy**: `vercel --prod`
 
-> [!IMPORTANT]
-> Vercel has a 250MB limit for serverless functions. Because `mediapipe` and `opencv` are large, you may need to use **Render** or **Railway** if your deployment exceeds this limit.
+> [!NOTE]
+> The backend has been optimized to remove heavy dependencies like `mediapipe` and `opencv`, as these are handled entirely on the client side. This ensures a fast and reliable deployment within Vercel's serverless limits.
 
 ---
 

@@ -1,9 +1,6 @@
 import os
 import pickle
-import cv2
-import mediapipe as mp
 import numpy as np
-import base64
 from flask import Flask, render_template, request, jsonify
 from flask_cors import CORS
 
@@ -22,9 +19,7 @@ else:
     model = None
     print(f"Warning: {MODEL_PATH} not found. Please train the model first.")
 
-# Mediapipe setup
-mp_hands = mp.solutions.hands
-hands = mp_hands.Hands(static_image_mode=True, min_detection_confidence=0.3)
+
 
 @app.route('/')
 def index():
