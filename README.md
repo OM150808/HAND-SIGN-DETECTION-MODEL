@@ -1,6 +1,7 @@
 # HAND_AI.OS 🖐️⚙️
 
 A high-performance, real-time hand gesture recognition platform designed with a sophisticated monochromatic "blueprint" aesthetic. `HAND_AI.OS` leverages the power of Mediapipe for sub-millisecond hand tracking and a lightweight Flask backend for intelligent gesture inference.
+Take a look https://hand-sign-detection-model.vercel.app/
 
 ### 🚀 Key Features
 *   **Real-time Inference**: Ultra-low latency hand tracking using client-side Mediapipe processing.
